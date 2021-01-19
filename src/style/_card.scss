@@ -1,0 +1,50 @@
+ul.card-container {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  li.card {
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 6px;
+    font-family: sans-serif;
+
+    .card-header {
+      border-bottom: 1px solid rgba(10,10,10,.1);
+      padding: .5rem .75rem;
+
+      h1 {
+        font-size: 1rem;
+        margin: 0 0 -.25rem;
+        font-style: italic;
+      }
+    
+      h2 {
+        margin: .5rem 0 0 0;
+        color: #969696;
+        font-size: .8rem;
+        font-weight: 300;
+      }
+    }
+
+    .card-content {
+      padding: .5rem .75rem;
+      border-bottom: 1px solid rgba(10,10,10,.1);
+
+      p {
+        font-size: .75rem;
+        margin: .25rem 0;
+        padding: 0;
+      }
+    }
+
+    .card-action-row {
+      display: flex;
+      padding: .75rem;
+      justify-content: flex-end;
+    }
+  }
+
+}

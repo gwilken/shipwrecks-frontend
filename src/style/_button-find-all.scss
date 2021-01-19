@@ -1,0 +1,11 @@
+// @import "~@material/button/mixins";
+
+.button-find-in-view {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 1rem;
+  margin: 0 auto;
+  font-size: .75rem;
+
+  // @include mdc-button-container-fill-color($color-orange);
+}

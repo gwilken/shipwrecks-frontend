@@ -1,0 +1,127 @@
+.mapboxgl-popup {
+  max-width: 50%!important;
+}
+
+  .mapboxgl-popup-tip {
+    box-shadow: 13px 14px 8px -16px rgba(0, 0, 0, 0.35);
+  }
+
+  .mapboxgl-popup-content {
+    padding: 0;
+    box-shadow: 13px 14px 8px -16px rgba(0, 0, 0, 0.35);
+
+    .popup-card {
+      .popup-header {
+        border-bottom: 1px solid rgb(205, 205, 205);
+        padding: 0 1rem;
+
+        .popup-card-title {
+          margin: 1rem .5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-style: italic;
+          }
+
+          .popup-card-controls {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin: 0 .5rem;
+              padding: 0;
+              font-size: .85rem;
+              cursor: pointer;
+              color: #2780ef;
+
+              &:last-of-type {
+                margin: 0 0 0 .5rem;
+              }
+            }
+
+            // .popup-zoom-to {
+            //   margin: 0;
+            //   padding: 0;
+            //   font-size: .85rem;
+            //   cursor: pointer;
+            //   color: #2780ef;
+            // }
+          }
+        }
+      }
+
+      .popup-content {
+        max-height: 400px;
+        overflow: scroll;
+        padding: .7rem 1.5rem 1rem;
+
+        ul {
+          margin: 0 0 1.5rem 0;
+          padding: 0;
+          li {
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+            font-family: sans-serif;
+            font-weight: 300;
+            &:first-of-type {
+              margin: 0;
+              &::before {
+                display: block;
+                margin-bottom: .4rem;
+                letter-spacing: .06rem;
+                font-size: .8rem;
+                color: #2780ef;
+              }
+            }
+          }
+        }
+
+        ul.popup-history {
+          li {
+            &:first-of-type {
+              &::before {
+                content: 'HISTORY';
+              }
+            }
+          }
+        }
+       
+        ul.popup-location{
+          li {
+            &:first-of-type {
+              &::before {
+                content: 'LOCATION';
+              }
+            }
+          }
+        }
+
+        ul.popup-sources {
+          li {
+            margin: .5rem 0;
+            &:first-of-type {
+              &::before {
+                content: 'SOURCES';
+              }
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      font-size: 2rem;
+
+      &:focus {
+        outline:0;
+      }
+    }
+  }
+

@@ -1,0 +1,15 @@
+.input-container {
+  font-family: sans-serif;
+  padding: .5rem 0;
+
+  .input-label {
+    font-size: .85rem;
+    margin: .5rem 0;
+  }
+
+  input.input-field {
+    padding: .75rem .5rem;
+    width: calc(100% - 1.25rem);
+    outline: none;
+  }
+}
