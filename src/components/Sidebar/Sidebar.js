@@ -1,5 +1,4 @@
 import React from 'react';
-// import Drawer, { DrawerContent } from '@material/react-drawer';
 import Card from './Card';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,6 +14,8 @@ const Sidebar = ({jumpTo, popUp}) => {
   const markers = useSelector(state => state.markers);
   const query = useSelector(state => state.keywordSearchQuery);
   const dispatch = useDispatch();
+
+  console.log('isOpen', isOpen)
 
   let cards = [];
 
@@ -56,16 +57,23 @@ const Sidebar = ({jumpTo, popUp}) => {
 
 
   return (
-    <div className={ isOpen ? 'results-drawer-open' : '' }>
+    <div 
+      className={`drawer ${isOpen ? 'results-drawer-open' : ''} `}
+      // style={{ transform: isOpen ? 'translateY(10%)' :'translateX(0) translateY(95%)'}}
+      >
       <div className="drawer-tab"
        onClick={ () => dispatch(toggleResultsDrawer(!isOpen)) }>
          
         <div className="arrow-icon" alt="collapse drawer">
           { isOpen ? '\u25C0' : '\u25B6' }
         </div>
+
+        <div className="mobile-close">
+          { isOpen ? 'Close' : 'Results List' }
+        </div>
       </div>
 
-      <div tag='main'>
+      <div className='drawer-contents'>
         <div className="results-container">
           <h3>{ markers.data.features.length } results. </h3>
 

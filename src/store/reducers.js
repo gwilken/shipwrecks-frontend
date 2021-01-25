@@ -84,7 +84,7 @@ const initialState = {
   isSearchOnMapMoveToggled: true,
   // mapStyle: 'mapbox://styles/gwilken/cjxwljb4b1kt51cl63y6wzr0w',
   mapStyle: 'depth',
-  isResultsDrawerToggled: true,
+  isResultsDrawerToggled: window.innerWidth <= 500 ? false : true,
   isSettingsDrawerToggled: false,
   hoveredFeatureData: null,
   hoveredFeatureHashMap: {},

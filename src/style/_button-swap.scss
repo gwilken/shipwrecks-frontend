@@ -1,11 +1,22 @@
-// @import "~@material/button/mixins";
-
 .button-swap {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
   margin: 0 auto;
   font-size: .75rem;
+  height: 40px;
 
-  // @include mdc-button-container-fill-color($color-orange);
+  &.drawer-open {
+    left: calc(30% + 1rem);
+  }
+
+  @media (max-width: 500px) {
+    bottom: unset;
+    top: .5rem;
+    z-index: 1000;
+
+    &.drawer-open {
+      left: 1rem;
+    }
+  }
 }

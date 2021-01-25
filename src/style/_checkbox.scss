@@ -1,0 +1,145 @@
+.checkbox-search-on-move {
+  position: absolute;
+  padding: 0 1rem 0 0;
+  display: flex;
+  align-items: center;
+  bottom: 1rem;
+  right: 1rem;
+  margin: 0 auto;
+  font-size: .75rem;
+  z-index: 1;
+  background-color: #fb6839;
+  border-radius: 2px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+
+  &:hover {
+    background-color: #f77b54;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    cursor: pointer;
+  }
+  
+  @media (max-width: 500px) {
+    bottom: unset;
+    top: .5rem;
+    right: .5rem;
+    z-index: 1000;
+  }
+
+  .mdc-checkbox {
+    display: inline-block;
+    position: relative;
+    flex: 0 0 18px;
+    box-sizing: content-box;
+    width: 18px;
+    height: 18px;
+    padding: 11px;
+    line-height: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: bottom;
+  
+    &::before,&::after {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      content: "";
+    } 
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      cursor: inherit;
+    }
+
+    .mdc-checkbox__background {
+      border-color: #fff;
+      background-color: #fff;
+      left: 11px;
+      right: auto;
+      display: inline-flex;
+      position: absolute;
+      top: 11px;
+      bottom: 0;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 45%;
+      height: 45%;
+      border: 2px solid;
+      border-radius: 2px;
+      background-color: transparent;
+      pointer-events: none;
+      will-change: background-color,border-color;
+      transition: background-color 90ms cubic-bezier(.4,0,.6,1) 0ms,border-color 90ms cubic-bezier(.4,0,.6,1) 0ms;
+    
+      &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        content: "";
+        will-change: opacity,transform;
+        transition: opacity 90ms cubic-bezier(.4,0,.6,1) 0ms,transform 90ms cubic-bezier(.4,0,.6,1) 0ms;
+      }
+
+      .mdc-checkbox__checkmark {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  label {
+    color: #fff;
+    font-family: Roboto,sans-serif;
+    font-weight: 300;
+    letter-spacing: .08929em;
+    text-transform: uppercase;
+    font-size: .75rem;
+    min-width: 10rem;
+  }
+
+}
+
+.checkbox-search-on-move .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate)~.mdc-checkbox__background {
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.mdc-checkbox__native-control:checked~.mdc-checkbox__background .mdc-checkbox__checkmark-path, .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background .mdc-checkbox__checkmark-path {
+  stroke-dashoffset: 0;
+}
+
+.checkbox-search-on-move .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .checkbox-search-on-move .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background {
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.mdc-checkbox__checkmark-path {
+  transition: stroke-dashoffset .18s cubic-bezier(.4,0,.6,1) 0ms;
+  stroke: currentColor;
+  stroke-width: 3.12px;
+  stroke-dashoffset: 29.78334;
+  stroke-dasharray: 29.78334;
+}
+
+

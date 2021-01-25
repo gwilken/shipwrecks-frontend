@@ -1,12 +1,14 @@
 import React from 'react'
-// import Button from '@material/react-button/';
+import { useSelector } from 'react-redux';
 
-const ButtonSwapBasemap = ({toggleMapStyle}) =>  {
+const ButtonSwapBasemap = ({toggleMapStyle, isResultsDrawerToggled}) =>  {
+  let windowWidth = useSelector(state => state.windowWidth);
+
   return (
-      <div className='button-swap button-primary margin-top-bottom' 
-        raised
+      <div 
+        className={`button button-swap margin-top-bottom ${isResultsDrawerToggled ? 'drawer-open' : ''}`}
         onClick={  () => toggleMapStyle() } >
-        Toggle Depth
+        { windowWidth <= 500 ? 'Depth' : 'Toggle Depth'}
       </div>
   )
 }

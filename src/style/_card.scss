@@ -1,5 +1,5 @@
 ul.card-container {
-  margin: 0;
+  margin: 1rem 0 0 0;
   padding: 0;
   cursor: pointer;
 
@@ -10,6 +10,7 @@ ul.card-container {
     background-color: white;
     border-radius: 6px;
     font-family: sans-serif;
+    margin: .75rem 0;
 
     .card-header {
       border-bottom: 1px solid rgba(10,10,10,.1);
@@ -44,6 +45,10 @@ ul.card-container {
       display: flex;
       padding: .75rem;
       justify-content: flex-end;
+    }
+
+    &:hover {
+      box-shadow: -2px 1px 11px 0px rgb(0 0 0 / 0%), 0px 5px 16px 0px rgb(0 0 0 / 10%);
     }
   }
 

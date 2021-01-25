@@ -17,4 +17,8 @@
 .update-button {
   margin: .25rem 0 .5rem 0;
   background-color: #4f7eff;
+
+  &:hover {
+    background-color: #658eff;
+  }
 }

@@ -1,6 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setHoveredFeature } from '../../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { 
+  setHoveredFeature,
+  toggleResultsDrawer
+} from '../../store/actions';
 
 
 const Card = ({
@@ -15,6 +18,7 @@ const Card = ({
     popUp
   }) => {
 
+  let windowWidth = useSelector(state => state.windowWidth);
   const dispatch = useDispatch();
 
   function handleMouseOver() {
@@ -24,7 +28,11 @@ const Card = ({
   
   function handleOnClick() {
     jumpTo(location_longitude, location_latitude);
-    popUp(location_longitude, location_latitude, id)
+    popUp(location_longitude, location_latitude, id);
+
+    if (windowWidth <= 500) {
+      dispatch(toggleResultsDrawer(false));
+    }
   }
 
   return (

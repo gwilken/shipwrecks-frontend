@@ -1,41 +1,41 @@
-.drawer-container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.drawer-app-content {
-  flex: auto;
-  overflow: auto;
-}
-
-.mdc-drawer__header {
-  .settings-content {
-    display: flex;
-    flex-direction: column; 
-    
-    .switch-toggle-labels,
-    .switch-toggle-dark-mode,
-    .switch-toggle-cluster {
-      margin: .5rem 0;
-
-      label {
-        margin-left: 1rem;
-      }
-    }
-  }
-}
-
-
-.mdc-drawer {
+.drawer {
   position: absolute;
-  transition: .2s;
-  left: -25%;
-  width: 25%;
-  background-color: $color-lightgrey;
+  transition: .1s;
+  left: -30%;
+  width: 30%;
+  background-color: #f0f0f0d1;
   overflow: visible;
-  box-shadow: 13px 14px 8px -16px rgba(0, 0, 0, 0.35);
+  box-shadow: 13px 14px 8px -16px rgba(0,0,0,.35);
+  border-radius: 0 0 0 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 100%;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  border-right: 1px solid;
+  border-color: rgba(0,0,0,.12);
+
+  &.results-drawer-open {
+    // transform: translateX(0);
+    left: 0%;
+  }  
+
+  @media (max-width: 500px) {
+    width: 100%;
+    left: 0;
+    height: 36px;
+    border-right: none;
+    top: calc(100% - 36px);
+
+    &.results-drawer-open {
+      height: unset;
+      top: calc(10%);
+    }  
+  }
+
+ 
 
   .drawer-tab {
     position: absolute;
@@ -46,64 +46,89 @@
     top: 3rem;
     height: 7%;
     background-color: #fb6839;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0,0,0,.12);
     border-radius: 0 5px 5px 0;
-    box-shadow: 7px 6px 7px -8px rgba(0, 0, 0, 0.35);
+    box-shadow: 7px 6px 7px -8px rgba(0,0,0,.35);
     cursor: pointer;
+   
+    &:hover {
+      background-color: #f77b54;
+    }
 
     .arrow-icon {
       padding: .75rem .5rem .75rem .45rem;
       font-size: .75rem;
-      color: white;
+      color: #fff;
+    }
+
+    .mobile-close {
+      display: none;
+    }
+
+    @media (max-width: 500px) {
+      position: sticky;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      height: unset;
+      background-color: #bababa;
+      border: none;
+      border-radius: 0;
+
+      &:hover {
+        background-color: #bababa;;
+      }
+
+      .arrow-icon {
+        display: none;
+      }
+
+      .mobile-close {
+        display: block;
+        margin: 0 auto;
+        color: #fff;
+        padding: 0 16px;
+        font-family: Roboto,sans-serif;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-size: .875rem;
+        line-height: 2.25rem;
+        font-weight: 500;
+        letter-spacing: .08929em;
+        text-transform: uppercase;
+        height: 36px;
+      }
     }
   }
 
-  .drawer-header-container {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid silver;
-    padding: 1rem 0;
-
-    h2 {
-      font-family: sans-serif;
-      font-weight: 300;
-    }
-  }
-  
-  .results-container {
-    h3 {
-      font-family: sans-serif;
-      font-weight: 300;
-      margin-left: .5rem;
-    }
-  }
-
-  .close-button {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: 2rem;
-  }
-
-  main {
+  .drawer-contents {
     padding: 0 1rem;
-  }
+    height: 100%;
+    overflow-y: auto;
 
-  .drawer-footer-container {
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem 0;
-    width: calc(100% - 2rem);
-    background-color: $color-lightgrey;
-    bottom: 0;
-  }
+    .results-container {
+      h3 {
+        margin-left: .5rem;
+        font-family: sans-serif;
+        font-weight: 300;
+      }
 
-  &.results-drawer-open {
-    left: 0;
+      .filters-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        background-color: #dedede;
+        border-radius: 6px;
+
+        .input-container {
+          font-family: sans-serif;
+          padding: .5rem 0;
+        }
+      }
+    }
   }
 }
 
-.margin-top-bottom {
-  margin: .75rem 0;
-}
+
+

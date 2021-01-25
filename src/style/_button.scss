@@ -1,28 +1,40 @@
+
 .button {
-  color: white;
-  background-color: $color-medium-grey;
-  font-family: Roboto, sans-serif;
-  font-size: 0.775rem;
-  line-height: 1.75rem;
+  background-color: #fb6839;
+  color: #fff;
+  padding: 0 16px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+  font-family: Roboto,sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: .875rem;
+  line-height: 2.25rem;
   font-weight: 500;
-  letter-spacing: 0.08929em;
+  letter-spacing: .08929em;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: Roboto, sans-serif;
-  padding: 0 12px;
   display: inline-flex;
   position: relative;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   min-width: 64px;
-  height: 32px;
+  height: 36px;
   border: none;
   outline: none;
   line-height: inherit;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  -webkit-appearance: none;
   overflow: hidden;
   vertical-align: middle;
   border-radius: 4px;
-  cursor: pointer;
+
+  &:hover {
+    background-color: #f77b54;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    cursor: pointer;
+  }
 }
